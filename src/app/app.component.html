@@ -1,0 +1,15 @@
+<div>
+  <app-header (onRandomize)="randomizeRatings($event)" [toggle]="randomRatingToggle"></app-header>
+  <div class="fruits-list-container">
+      <mat-list>
+          <mat-list-item *ngFor="let fruit of fruits$ | async |orderBy:'overallRating':true ">
+            <span class="fruit-picture">{{fruit.picture}}</span>
+            <h1 matLine class="fruit-name"> {{fruit.name}}- {{fruit.overallRating}} - Total Ratings: {{fruit.userRatings.length}}</h1>
+            <p matLine>
+            <bar-rating [rate]="fruit.overallRating" [max]="5" (rateChange)="rateFruit($event,fruit)"></bar-rating> 
+            </p>
+            <mat-divider [inset]="true" ></mat-divider>
+          </mat-list-item>
+        </mat-list>
+      </div>
+</div>

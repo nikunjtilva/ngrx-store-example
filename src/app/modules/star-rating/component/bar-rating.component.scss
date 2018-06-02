@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+.br {
+  position: relative;
+  margin: 15px 0;
+}
+
+.br-units {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.br-unit {
+  cursor: pointer;
+  // some tweaks
+  -webkit-font-smoothing: antialiased;
+  text-rendering: auto;
+}
+
+.br-selected {
+}
+
+.br-readonly, .br-disabled {
+  .br-unit {
+    cursor: default;
+  }
+}
+
+// Bars
+$orange-color: #EDB867;
+$green-color: #50E3C2;
+$blue-color: #4278F5;
+
+// Stars
+$star-default: #d2d2d2;
+$star-active: #EDB867;
+$star-selected: #EDB867;
+
+$black: #252627;
+$gray: #757575;
+
+.br-default {
+
+  .br-units {
+    align-items: center;
+  }
+
+  .br-unit {
+    margin-right: 5px;
+    font-size: 23px;
+    height: 18px;
+    width: 18px;
+
+    &:after {
+      content: "\2605";
+      color: $star-default;
+    }
+  }
+
+  .br-selected:after {
+    color: $star-selected;
+  }
+
+  .br-active:after {
+    color: $star-active;
+  }
+
+}
+
+

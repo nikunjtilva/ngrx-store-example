@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+      <span class="fruit">🥑</span>
+        <span>Fruits rating with ngrx</span>
+        <span class="spacer"></span>
+        <button mat-button (click)="randomize()" color="{{ toggle ? 'warn' : 'accent'}}" >
+        {{ toggle ? "Stop Random Rating" : "Start Random Rating"}}
+        </button>
+     
+    </mat-toolbar-row>
+
+</mat-toolbar>
